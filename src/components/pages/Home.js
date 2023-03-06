@@ -1,5 +1,9 @@
+import { Link } from "react-router-dom";
+
 import heroImage from "../../assets/images/hero_image.png"
 import pdfIcon from "../../assets/images/pdf_file_icon.svg"
+
+import { Cases } from "./Cases"
 
 export const Home = () => {
     return (
@@ -13,11 +17,13 @@ export const Home = () => {
                 </div>
                 <div className="hero-buttons">
                     <button className="hero-button mr-4">Связаться с нами</button>
-                    <button className="hero-button pdf-button">
+                    <Link to="/files/pl_presentation.pdf" target="_blank" download>
+                        <button className="hero-button pdf-button">
                         Скачать презентацию<br />
                         <span>о компании в формате PDF</span>
                         <img className="pdf-icon" src={pdfIcon} alt="PDF file icon" />
                     </button>
+                    </Link>
                 </div>
             </div>
             <div className="info-fields">
@@ -58,6 +64,7 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
+            <Cases />
         </>
     )
 }
