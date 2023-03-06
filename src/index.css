@@ -1,13 +1,188 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --text-color: #2b2b2b;
+    --hue-color: 240;
+    --background-color: hsl(240, 50%, 95%);
+    --shadow-color: #F2F2FB;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    letter-spacing: -0.05rem;
+    color: var(--text-color);
+}
+
+.mr-2 {
+    margin-right: 2rem;
+}
+
+.mr-3 {
+    margin-right: 3rem;
+}
+
+.mr-4 {
+    margin-right: 4rem;
+}
+
+html,
+body {
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1.5rem 3rem;
+    border-radius: 1rem;
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+    box-shadow:
+        5px 5px 8px hsla(var(--hue-color), 40%, 90%, 1),
+        -5px -5px 8px hsla(var(--hue-color), 2%, 98%, 1),
+        inset 4px 4px 6px hsla(var(--hue-color), 8%, 20%, 0),
+        inset -4px -4px 6px hsla(var(--hue-color), 40%, 90%, 0);
+}
+
+button:hover {
+    box-shadow:
+        5px 5px 8px hsla(var(--hue-color), 40%, 90%, 0),
+        -5px -5px 8px hsla(var(--hue-color), 2%, 98%, 0),
+        inset 4px 4px 6px hsla(var(--hue-color), 40%, 90%, 1),
+        inset -4px -4px 6px hsla(var(--hue-color), 2%, 98%, 1);
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.header {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 102;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5rem;
+}
+
+.header-container {
+    padding: 2rem 0;
+}
+
+.nav-container {
+    display: flex;
+}
+
+.nav-container .nav-element {
+    margin: 0 3rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.logo {
+    width: 60px;
+}
+
+.logo.background {
+    width: 80%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 45%;
+    opacity: 0.02;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    padding: 0 5rem;
+    overflow: hidden;
+}
+
+.hero-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-bottom: 7rem;
+    /* text-transform: uppercase; */
+}
+
+.hero-title h1 {
+    font-weight: 300;
+    font-size: 4.5rem;
+    letter-spacing: -0.15rem;
+}
+
+.hero-title h1 b {
+    font-weight: 600;
+    letter-spacing: -0.15rem;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+}
+
+.hero-image img {
+    position: absolute;
+    width: 1500px;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+
+}
+
+.hero-image .hero-background {
+    right: -4.5rem;
+    top: 0;
+    width: 120%;
+}
+
+.hero-image .hero-laptop {
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 55%;
+    width: 80%;
+}
+
+.hero-buttons {
+    width: 100%;
+    position: absolute;
+    height: 50vh;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.hero-button {
+    font-size: 1.25rem;
+    width: 20rem;
+    height: 6rem;
+}
+
+.hero-button.pdf-button {
+    text-align: left;
+    line-height: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+.hero-button.pdf-button span {
+    font-size: .85rem;
+}
+.hero-button.pdf-button .pdf-icon {
+    position: absolute;
+    width: 25%;
+    bottom: -20%;
+    right: -5%;
 }
