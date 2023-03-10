@@ -121,6 +121,7 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 0 5rem;
+  position: relative;
 }
 
 .header-container {
@@ -146,6 +147,42 @@ a {
 
 .logo {
   width: 70px;
+}
+
+.burger-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 4rem;
+  padding: 1.5rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger-button span {
+  width: 1.5rem;
+  height: 1px;
+  background-color: var(--text-color);
+  position: relative;
+}
+
+.burger-button span.active:nth-child(1) {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 50%;
+  left: 50%;
+}
+
+.burger-button span.active:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-button span.active:nth-child(3) {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 50%;
+  left: 50%;
 }
 
 .page-title {
@@ -315,7 +352,7 @@ a {
   position: absolute;
   width: 130%;
   bottom: 0;
-  left: 0;
+  left: -10%;
 }
 
 
@@ -329,7 +366,7 @@ a {
 .case-page-title {
   font-weight: 300;
   font-size: 3rem;
-  margin: 8rem 0 3rem ;
+  margin: 8rem 0 3rem;
   width: 50%;
 }
 
@@ -359,6 +396,7 @@ a {
   margin: 1rem;
   line-height: 1.25rem;
 }
+
 .case-info-sub ul li {
   margin-top: .25rem;
 }
@@ -374,4 +412,110 @@ a {
   left: 50%;
   top: -30%;
   width: 70%;
+}
+
+
+@media screen and (max-width: 480px) {
+  .mr-4 {
+    margin-right: 2rem !important;
+  }
+
+  .burger-button {
+    display: flex;
+  }
+
+  .body-wrapper,
+  .header-content {
+    padding: 0 2rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+  }
+
+  .nav-container {
+    display: none;
+  }
+
+  .nav-container.active {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .nav-container .nav-element {
+    margin: 1.5rem;
+    margin-top: 0;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-title {
+    flex: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 3rem;
+    align-items: flex-start;
+  }
+
+  .hero-title h1 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: -0.15rem;
+  }
+
+  .hero-image {
+    flex: 2;
+  }
+
+  .hero-image img {
+    width: 800px;
+    left: 38%;
+    top: 45%;
+  }
+
+  .hero-buttons {
+    padding: 2rem 0;
+    height: auto;
+    justify-content: space-between;
+  }
+
+  .hero-button {
+    font-size: 0.85rem;
+    width: 11rem;
+    height: 4rem;
+    padding: 1rem;
+    line-height: 1rem;
+  }
+
+  .hero-button.pdf-button {
+    line-height: 1rem;
+  }
+
+  .hero-button.pdf-button span {
+    font-size: .65rem;
+  }
+
+  .info-fields {
+    padding: 0;
+    padding-top: 4rem;
+    margin-bottom: 0;
+  }
+
+  .section-title {
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .about-company-info p {
+    font-weight: 400;
+    font-size: 1rem;
+}
 }
