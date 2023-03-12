@@ -333,26 +333,33 @@ a {
 .portfolio-case {
   flex: 1 0 15%;
   display: flex;
+  flex-direction: column;
   margin: 3rem;
+  min-height: 8rem;
 }
 
 .portfolio-case-title {
   flex: 1;
   padding: 2rem;
-  font-weight: 400;
-  font-size: 1rem;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 1.25rem;
 }
 
 .portfolio-case-image {
   flex: 1;
+  min-height: 8rem;
   position: relative;
 }
 
 .portfolio-case-image img {
   position: absolute;
-  width: 130%;
+  /* width: 7rem; */
+  height: 100%;
   bottom: 0;
-  left: -10%;
+  transform: translate(-50%, 0);
+  left: 50%;
+  /* left: -30%; */
 }
 
 
@@ -372,16 +379,41 @@ a {
 
 .case-info {
   display: flex;
+  /* margin: 2rem 0; */
+}
+
+.emphasized-item {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.case-sub-info {
+  padding-right: 50%;
+  margin-bottom: 3rem;
+}
+
+.case-sub-info-item {
+  margin-top: 2rem;
+}
+
+.case-sub-info-item ul {
+  margin-left: 1rem;
+}
+
+.case-sub-info-item ol {
+  margin-left: 1rem;
 }
 
 .case-text {
   flex: 1;
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .case-info-main {
   font-size: 1.25rem;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   line-height: 2rem;
 }
 
@@ -414,8 +446,38 @@ a {
   width: 70%;
 }
 
+.case-image.fifty img {
+  width: 50%;
+}
+.case-image.horizontal img {
+  top: 0%;
+  width: 80%;
+}
 
-@media screen and (max-width: 480px) {
+
+
+.case-contact-info {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.case-contact-info-item {
+  margin-bottom: 1rem;
+}
+
+.case-contact-info-item b {
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.case-contact-info-item b:hover {
+  color: var(--secondary-color);
+}
+
+
+@media screen and (max-width: 1024px) {
   .mr-4 {
     margin-right: 2rem !important;
   }
@@ -517,5 +579,39 @@ a {
   .about-company-info p {
     font-weight: 400;
     font-size: 1rem;
-}
+  }
+
+
+  .case-info {
+    flex-direction: column;
+  }
+
+  .case-page-title {
+    font-weight: 300;
+    font-size: 2rem;
+    margin: 8rem 0 3rem;
+    width: 100%;
+  }
+
+  .case-info-main {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    line-height: 1.5rem;
+  }
+
+
+  .case-image {
+    min-height: 50vh;
+  }
+
+  .case-image img {
+    height: 100%;
+    width: auto;
+    top: 0;
+  }
+
+
+  .case-sub-info {
+    padding-right: 0;
+  }
 }
